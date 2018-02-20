@@ -18,7 +18,6 @@ let logOptions: kt.TransformInitializeLogOptions = {
 
 let createContext = (source: string): any => {
   return {
-    ts: true,
     config: {},
     filename: 'template.haml',
     module: 'module',
@@ -49,23 +48,6 @@ test('transformer should initialize log appenders', (t) => {
 test('transformer should initialize log category', (t) => {
   t.deepEqual(getLoggerSpy.args[0][0], 'haml-transform.karma-typescript');
   t.end();
-});
-
-test('transformer should check ts property', (t) => {
-  t.plan(1);
-
-  let context = createContext('%p');
-  context.ts = undefined;
-
-  transform(context, (error: Error, result: kt.TransformResult | boolean) => {
-    if (error) {
-      t.fail();
-    }
-    else {
-      let dirty: boolean = !!result;
-      t.false(dirty);
-    }
-  });
 });
 
 test('transformer should set the dirty flag', (t) => {

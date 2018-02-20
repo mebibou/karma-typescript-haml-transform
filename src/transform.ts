@@ -5,10 +5,6 @@ import * as kt from 'karma-typescript/src/api/transforms';
 let log: log4js.Logger;
 
 let transform: kt.Transform = (context: kt.TransformContext, callback: kt.TransformCallback) => {
-  if (!context.ts) {
-    return callback(undefined, false);
-  }
-
   if (context.filename.match(/\.haml$/)) {
     log.debug('Transforming %s', context.filename);
 

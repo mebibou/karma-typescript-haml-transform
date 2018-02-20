@@ -1,5 +1,7 @@
 # karma-typescript-haml-transform
 
+[![NPM Version](https://img.shields.io/npm/v/karma-typescript-haml-transform.svg)](https://www.npmjs.com/package/karma-typescript-haml-transform)
+
 [![Travis build status](https://travis-ci.org/mebibou/karma-typescript-haml-transform.svg?branch=master)](https://travis-ci.org/mebibou/karma-typescript-haml-transform)
 
 > Karma-Typescript :heart: Haml

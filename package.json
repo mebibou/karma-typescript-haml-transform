@@ -1,0 +1,60 @@
+{
+  "name": "karma-typescript-haml-transform",
+  "version": "0.0.1",
+  "description": "Plugin for transforming haml templates",
+  "scripts": {
+    "build": "tsc --rootDir ./src",
+    "build:ci": "tsc --noEmit --rootDir ./src",
+    "build:watch": "tsc -w --rootDir ./src",
+    "lint": "tslint --project tsconfig.json",
+    "test": "nyc --require ts-node/register tape src/*.spec.ts | faucet"
+  },
+  "main": "dist/transform.js",
+  "keywords": [
+    "haml",
+    "karma-typescript",
+    "typescript"
+  ],
+  "author": "Guillaume Royer <guillaumeroyer.mail@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mebibou/karma-typescript-haml-transform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mebibou/karma-typescript-haml-transform.git"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.spec.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "temp-directory": "./coverage/.nyc_output"
+  },
+  "dependencies": {
+    "log4js": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/acorn": "^4.0.0",
+    "@types/karma": "^1.7.3",
+    "@types/lodash": "^4.14.55",
+    "@types/log4js": "0.0.32",
+    "@types/node": "^9.4.6",
+    "@types/sinon": "^2.1.2",
+    "@types/tape": "^4.2.29",
+    "faucet": "0.0.1",
+    "karma-typescript": "latest",
+    "nyc": "^11.1.0",
+    "sinon": "^2.1.0",
+    "tape": "^4.6.3",
+    "ts-node": "^3.3.0",
+    "tslint": "^4.4.2",
+    "tslint-eslint-rules": "^3.3.0",
+    "typescript": "latest"
+  }
+}
